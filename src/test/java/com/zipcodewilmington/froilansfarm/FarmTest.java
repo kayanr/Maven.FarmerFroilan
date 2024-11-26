@@ -5,7 +5,11 @@ import org.junit.jupiter.api.Test;
 //import org.testng.Assert;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FarmTest {
 
@@ -27,7 +31,7 @@ public class FarmTest {
         farms.setStables(stableList);
 
         Assertions.assertFalse(farms.getStables().isEmpty());
-        Assertions.assertEquals(1,farms.stables.size());
+        assertEquals(1,farms.stables.size());
 
     }
 
@@ -51,7 +55,7 @@ public class FarmTest {
         Farm farm = new Farm();
         farm.setChickenCoop(chickenCoopList);
 
-        Assertions.assertEquals(4,farm.getChickenCoops().size());
+        assertEquals(4,farm.getChickenCoops().size());
         Assertions.assertFalse(farm.getChickenCoops().isEmpty());
 
     }
@@ -72,12 +76,10 @@ public class FarmTest {
         farm1.add(new FarmHouse());
         farm.setHouse(farm1);
 
-        Assertions.assertEquals(1,farm.getHouse().size());
+        assertEquals(1,farm.getHouse().size());
         Assertions.assertFalse(farm.getHouse().isEmpty());
 
     }
-
-
 
 
 }

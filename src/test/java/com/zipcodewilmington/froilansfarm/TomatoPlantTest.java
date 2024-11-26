@@ -8,6 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TomatoPlantTest {
 
     @Test
+    public void isCrop(){
+        TomatoPlant tomatoPlant = new TomatoPlant();
+        Crop<?> crop = new Crop<>();
+        assertTrue(tomatoPlant instanceof Crop<?>);
+    }
+    @Test
     public void checkInitialState(){
         TomatoPlant tomatoPlant = new TomatoPlant();
         assertFalse(tomatoPlant.hasBeenFertilized(), "Hasn't been fertilized yet.");
