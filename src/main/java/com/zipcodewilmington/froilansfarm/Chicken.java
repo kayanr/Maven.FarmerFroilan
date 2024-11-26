@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Chicken extends Animal implements Produce {
+public class Chicken extends Animal implements Produce<Egg> {
 private int chickenId;
 private boolean hasBeenFertilized;
 
@@ -26,7 +26,7 @@ private boolean hasBeenFertilized;
     }
 
     @Override
-    public Edible yield() {
+    public Egg yield() {
        return null;
     }
 
