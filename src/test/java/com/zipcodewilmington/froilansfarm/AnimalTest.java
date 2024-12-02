@@ -2,8 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AnimalTest {
     //Eater can eat an Edible object.
@@ -17,7 +16,7 @@ public class AnimalTest {
 
     //NoiseMaker can makeNoise
     @Test
-    public void NoiseMakerCanMakeNoise() {
+    public void NoiseMakerCanMakeNoiseTest() {
         String name = "Froilan";
         String noise = "Hello!";
         //To be continued...
@@ -28,7 +27,7 @@ public class AnimalTest {
 
     //Animal is a NoiseMaker and Eater
     @Test
-    public void AnimalIsNoiseMakerAndEater() {
+    public void AnimalIsNoiseMakerAndEaterTest() {
         String noise = "Neigh!";
         Animal animal = new Horse();
         NoiseMaker noiseMaker = new Horse();
@@ -43,7 +42,7 @@ public class AnimalTest {
 
     //Horse is an Animal and Rideable
     @Test
-    public void HorseIsAnimalAndRideable() {
+    public void HorseIsAnimalAndRideableTest() {
 
         Animal animal = new Horse();
         Rideable rideable = new Horse();
@@ -54,7 +53,7 @@ public class AnimalTest {
 
     //Chicken is an Animal and a Produce
     @Test
-    public void ChickenIsAnimalProduce() {
+    public void ChickenIsAnimalProduceTest() {
 
     //Animal<EarCorn> animal = new Chicken<EarCorn>();
 
@@ -87,19 +86,18 @@ public class AnimalTest {
    @Test
    public void ChickenEatsTest(){
         Chicken chicken = new Chicken();
-        Edible edibleFood = new EarCorn();
-        assertTrue(chicken.eat(edibleFood));
+        EarCorn edibleFood = new EarCorn();
+        assertTrue(chicken.eat((EarCorn) edibleFood));
    }
 
-   /*@Test
-    public void ChickenYieldEdibleEgg(){
-       Chicken chicken = new Chicken();
-       chicken.setHasBeenFertilized(false);
-       Produce<Egg>  egg = chicken.yield();
-       assertTrue(egg instanceof Edible<Egg>);
+   @Test
+    public void ChickenYieldsEdibleEggWhenNotFertilized(){
+        Chicken chicken = new Chicken();
+        chicken.setHasBeenFertilized(false);
+        Egg egg = chicken.yield();
+        assertNotNull(egg);
 
-
-   }*/
+   }
 
 
 }
